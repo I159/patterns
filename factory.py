@@ -1,6 +1,6 @@
 #coding: utf-8
 """
-VW factory
+Factory pattern
 """
 class Styles(object):
     def __init__(self, style):
