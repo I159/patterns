@@ -8,27 +8,27 @@ class Engineer(object):
         self.project = None
 
     def construct_car(self):
-        self.project.new_building()
+        self.project.new_construction()
         self.project.get_donor()
         self.project.build_engene()
         self.project.put_wheels()
 
-    def get_building(self):
-        return self.project.building
+    def get_construction(self):
+        return self.project.construction
 
 
 #Abstract Builder
 class StyleStandard(object):
     def __init__(self, donor):
-        self.building = None
+        self.construction = None
         self.donor = donor
 
-    def new_building(self):
-        self.building = Building()
+    def new_construction(self):
+        self.construction = Workshop()
 
 
 #Product
-class Building(object):
+class Workshop(object):
     def __init__(self):
         self.donor = None
         self.engene = None
@@ -48,13 +48,13 @@ class BuildIt(object):
         self.engeneer = Engineer()
         self.donor = donor
         self.style = style
-        self.building = None
+        self.construction = None
 
     def build(self):
         self.engeneer.project = self.style(donor=self.donor)
         self.engeneer.construct_car()
-        self.building = self.engeneer.get_building()
-        return self.building
+        self.construction = self.engeneer.get_construction()
+        return self.construction
 
     def __call__(self):
         return self.build()
