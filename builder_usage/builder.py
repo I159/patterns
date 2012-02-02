@@ -1,4 +1,3 @@
-
 #Director
 class Engineer(object):
     """
@@ -28,7 +27,7 @@ class StyleStandard(object):
 
 
 #Product
-class Building(object):
+class Workshop(object):
     def __init__(self):
         self.donor = None
         self.engene = None
