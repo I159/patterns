@@ -1,6 +1,9 @@
 #coding: utf-8
 
 class Culture(object):
+    """
+    Base class for main content processing.
+    """
     def get_culture(self):
         return self.__str__()
 
@@ -16,11 +19,13 @@ class Dictature(Culture):
 
 
 class Goverment(object):
-#    culture = None
+    """
+    Base structure class.
+    """
     def __str__(self):
         return self.culture.__str__()
 
-    def get_culrure(self):
+    def get_culture(self):
         return self.culture.get_culture()
 
     def set_culture(self):
