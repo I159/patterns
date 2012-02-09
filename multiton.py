@@ -1,19 +1,26 @@
 #!/usr/bin/env python
 
+"""
+Multiton pattern. If any class instance exists, returns existing instance.
+"""
 
-def multitone(cls):
+def multiton(cls):
+    """
+    instances should be stored, for real control of existing instances.
+    """
     instances = {}
-    print 'cls:', cls
     def classwrapper(*args, **kwargs):
+        """
+        If in the stored instances have no passed instances it will be created.
+        Other way wouldn't be.
+        """
         if cls.__name__ not in instances:
             instances[cls.__name__] = cls(*args, **kwargs)
-
         return instances[cls.__name__]
-    print 'instances:', instances
     return classwrapper
 
 
-@multitone
+@multiton
 class MyClass(object):
 
     def __init__(self, first=None, second=None):
