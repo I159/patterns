@@ -3,7 +3,6 @@
 def multiton(cls):
     instances = {}
     print 'cls %s' % cls
-    print 'out name %s' % name
     def get_instance(name):
         print 'name %s' % name
         if name not in instances:
