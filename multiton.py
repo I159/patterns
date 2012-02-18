@@ -1,26 +1,46 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+# -*- coding; utf-8 -*-
+
+"""
+Multiton pattern. If any class instance exists, returns existing instance.
+"""
 
 def multiton(cls):
+    #TODO: set up mongo for this pattern
+    """
+    instances should be stored, for real control of existing instances.
+    """
     instances = {}
-    print 'cls %s' % cls
-    # How the name attribute is getting by function???
-    def get_instance(name):
-        print 'name %s' % name
-        if name not in instances:
-            instances[name] = cls()
+    def classwrapper(*args, **kwargs):
+        """
+        If in the stored instances have no passed instances it will be created.
+        Other way wouldn't be.
+        """
+        name = '{0}_{1}'.format('_'.join((str(i) for i in args)), cls.__name__)
+        if cls.__name__ not in instances:
+            print 'not in instances'
+            instances[name] = cls(*args, **kwargs)
         return instances[name]
-    return get_instance
+    return classwrapper
 
 
 @multiton
 class MyClass(object):
-    pass
 
-#a = MyClass('0')
-#b = MyClass('0')
-c = MyClass('asdfasdf')
+    def __init__(self, first=None, second=None):
+        assert(first is not None)
+        assert(second is not None)
 
-#print 'a: %s' % a
-#print a is b
-#print a is c
 
+
+
+
+a = MyClass('first', 'second')
+b = MyClass('first', 'second')
+c = MyClass(1, 2)
+
+print 'All instances', a, b, c
+
+print 'a is b', a is b
+
+print 'a is c', a is c
