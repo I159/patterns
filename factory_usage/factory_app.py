@@ -1,4 +1,8 @@
+#!/usr/bin/env python
+# -*- coding; utf-8 -*-
+
 import factory
+
 
 class RatBug(factory.Donor):
     def get_model(self):

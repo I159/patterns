@@ -37,15 +37,3 @@ class ClassB(object):
     def __init__(self, first=None, second=None):
         assert(first is not None)
         assert(second is not None)
-
-
-
-#a = MyClass('first', 'second')
-#b = MyClass('first', 'second')
-#c = MyClass(1, 2)
-#
-#print 'All instances', a, b, c
-#
-#print 'a is b', a is b
-#
-#print 'a is c', a is c

@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding; utf-8 -*-
+
 
 class Styles(object):
     def __init__(self, style):
