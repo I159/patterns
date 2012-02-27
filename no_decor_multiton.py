@@ -2,32 +2,34 @@
 # -*- coding: utf-8 -*-
 
 class Multiton(object):
-    def __init__(self):
+    def __init__(self, instance, key):
+        self.key = key
+        self.instance = instance
         self.instances = {}
 
-    def __call__(self, key, instance):
-        self.instances['{0}_{1}'.format(instance.__name__, key)] = instance
-        return instance
-
-    def get_instance(self, key):
-        return self.instances[key]
+    def __call__(self):
+        name = '{0}_{1}'.format(self.instance.__class__.__name__, self.key)
+        if name not in self.instances:
+            self.instances[name] = self.instance
+        return self.instances[name]
 
 
 class A(object):
     def __init__(self, *args, **kwargs):
-        def __init(self, *args, **kwargs):
-            pass
+        pass
 
 class B(A):
     pass
 
 
-m = Multiton()
-a = m('a', A())
-b = m('b', A())
-c = m('b', B())
 
-print 'm.get_instance("a"): ', m.get_instance('a')
-print 'a is b', a is b
-print 'b is c', b is c
-print 'a, b, c', a, b, c
+
+a = Multiton('a', A())
+
+b = Multiton('b', A())
+
+c = Multiton('a', A())
+
+a() is b()
+
+a() is c()
