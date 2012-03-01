@@ -20,19 +20,3 @@ def multiton(cls):
             instances[name] = cls(*args, **kwargs)
         return instances.get(name)
     return classwrapper
-
-
-@multiton
-class ClassA(object):
-
-    def __init__(self, first=None, second=None):
-        assert(first is not None)
-        assert(second is not None)
-
-
-@multiton
-class ClassB(object):
-
-    def __init__(self, first=None, second=None):
-        assert(first is not None)
-        assert(second is not None)

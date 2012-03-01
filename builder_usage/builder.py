@@ -4,7 +4,7 @@
 
 class Engineer(object):
     """
-    Abstract class 
+    Abstract class
     """
     def __init__(self):
         self.project = None

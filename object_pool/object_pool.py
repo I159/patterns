@@ -31,7 +31,7 @@ class ObjectPool(object):
 
     def get_resource(self):
         if len(self.__resources) > 0:
-            print "Using existing resource"
+            print "Using  existing resource"
             return self.__resources.pop(0)
         else:
             print "Creating new resource"
@@ -39,21 +39,3 @@ class ObjectPool(object):
 
     def set_resource(self, resource):
         self.__resources.append(resource)
-
-
-
-def main():
-    pool = ObjectPool.get_instance()
-
-    one = pool.get_resource()
-    one.set_value(10)
-    pool.set_resource(one)
-    print "%s = %d" % (one, one.get_value())
-
-
-    one = pool.get_resource()
-    one.set_value(100)
-    pool.set_resource(one)
-    print "%s = %d" % (one, one.get_value())
-
-#main()
