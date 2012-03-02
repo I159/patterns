@@ -14,7 +14,15 @@ class Prototype(object):
     def unregister_obj(self, name):
         del self._objects[name]
 
-    def clone(self, name):
-        obj = deepcopy(self._objects[name])
-        obj.CLONED = True
-        return obj
+    def clone(self, name, kwargs):
+
+        class Obj(self._objects[name]):
+            CLONED = True
+
+        for key, value in kwargs.items():
+            setattr(Obj, key, value)
+
+        Obj.__name__ = 'cloned_%s' % name
+
+        return Obj
+

@@ -9,23 +9,19 @@ class A(object):
     def __init__(self, *args):
         self.args = args
 
-#    def __new__(self):
-#        return 'Class A args: %s' % ', '.join(self.args)
-
     def is_cloned(self):
         return self.CLONED
 
 
 class B(A):
-    def __new__(self):
-        return 'Class B args: %s' % ', '.join(self.args)
+    pass
 
 registered_objs = Prototype()
 
 registered_objs.reg_obj('A', A)
-registered_objs.reg_obj('B', B)
-C = registered_objs.clone('A')
-D = registered_objs.clone('B')
+b = registered_objs.clone('A')
 
 print A().is_cloned()
-print C().is_cloned()
+print B().is_cloned()
+print B.__name__
+print B().ARG
