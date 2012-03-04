@@ -1,8 +1,6 @@
 # !/usr/env/python python
 # -*- coding: utf8 -*-
 
-from copy import deepcopy
-
 
 class Prototype(object):
     def __init__(self):
