@@ -4,11 +4,17 @@
 from adapter import *
 
 class Dog(Client):
+    """
+    Personalized client
+    """
     pat_name = 'Bob'
     pat_noise = 'Bow-woW!'
 
 
 class Bob(AbsAdapter, Dog):
+    """
+    Mixed-in abstract adapter
+    """
     def make_noise(self):
         return self.noise()
 

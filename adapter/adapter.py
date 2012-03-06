@@ -1,5 +1,10 @@
 # /usr/bin/env python
 # -*- coding: utf8 -*-
+"""
+ Adapter pattern is used to convert the interface of an object to one the
+ client expects, allowing collaboration between classes that normally couldn't
+ work together due to differing interfaces.
+"""
 
 class ParamAdapter(object):
     """
@@ -16,11 +21,17 @@ class ParamAdapter(object):
 
 
 class AbsAdapter(object):
+    """
+    Abstract adapter
+    """
     def make_noise(self):
         raise NotImplementedError
 
 
 class Client(object):
+    """
+    Client, which adapters required
+    """
     pat_name = None
     pat_noise = None
     def noise(self):
