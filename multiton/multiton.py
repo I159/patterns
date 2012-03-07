@@ -11,7 +11,7 @@ def multiton(cls):
     def classwrapper(*args, **kwargs):
         """
         If in the stored instances have no passed instances it will be created.
-        Other way wouldn't be.
+        Other way use existing.
         """
         print cls.__name__
         name = '{0}_{1}'.format('_'.join((str(i) for i in args)), cls.__name__)
