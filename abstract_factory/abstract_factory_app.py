@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 # -*- coding; utf-8 -*-
 
-import factory
+from abstract_factory import Donor, WorkShop
 
 
-class RatBug(factory.Donor):
+class RatBug(Donor):
+    """
+    Client inherited from abtract client.
+    Prsonalized require methods
+    """
     def get_model(self):
         return "VW Cafer'65"
 
@@ -12,10 +16,14 @@ class RatBug(factory.Donor):
         return 'Rat Look'
 
 
-class RestoWagenWorkShop(factory.WorkShop):
-    objects = {'Bug': RatBug,}
+class RestoWagenWorkShop(WorkShop):
+    """
+    Appointed objects for reproducing in factory interface
+    """
+    objects = {'Bug': RatBug()}
 
 
+# Usage of factory
 WorkShop = RestoWagenWorkShop()
 Bug = WorkShop.build_it('Bug')
 

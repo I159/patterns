@@ -6,7 +6,11 @@ Provide an interface for creating families of related or dependent objects
 without specifying their concrete classes.
 """
 
+
 class Styles(object):
+    """
+    Provides functionality
+    """
     def __init__(self, style):
         self.style = style
 
@@ -20,6 +24,9 @@ class Styles(object):
 
 
 class Donor(object):
+    """
+    Abstract client
+    """
     def get_model(self):
         raise NotImplementedError
 
@@ -28,9 +35,12 @@ class Donor(object):
 
 
 class WorkShop(Donor):
+    """
+    Reproduces interface.
+    """
     objects = {}
 
     def build_it(self, name='default'):
-        ride = self.objects.get(name)()
+        ride = self.objects.get(name)
         style = Styles(ride.get_style())
         return '%s %s' % (style(), ride.get_model())
