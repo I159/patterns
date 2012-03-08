@@ -1,4 +1,4 @@
-#!/usr/env/python python
+# !/usr/env/python python
 # -*-coding:utf8-*-
 
 class Singleton(type):
