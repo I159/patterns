@@ -1,4 +1,4 @@
-# /usr/bin/env python
+# !/usr/bin/env python
 # -*- coding: utf8 -*-
 """
  Adapter pattern is used to convert the interface of an object to one the
