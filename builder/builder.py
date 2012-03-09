@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 # -*- coding; utf-8 -*-
 
+"""
+The builder pattern is an object creation software design pattern. The
+intention is to abstract steps of construction of objects so that different 
+implementations of these steps can construct different representations of 
+objects. Often, the builder pattern is used to build products in accordance
+with the composite pattern.
+"""
 
 class Engineer(object):
     """
@@ -52,7 +59,7 @@ class Workshop(object):
 class BuildIt(object):
     """
     Client as callable class.
-    Client not required to be a callable class, but in my opinion, it is
+    Client is not required to be a callable class, but in my opinion, it is
     pretty useful.
     """
     def __init__(self, donor, project):
