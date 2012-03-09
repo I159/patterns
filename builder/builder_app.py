@@ -5,6 +5,11 @@ import builder
 
 
 class Boso510(builder.StyleStandard):
+    """
+    Concrete builder (in original pattern).
+    Provides implementation for Builder. It is an object able to construct
+    other objects. Constructs and assembles parts to build the objects.
+    """
     def get_donor(self):
         self.construction.donor = self.donor
 
@@ -15,6 +20,6 @@ class Boso510(builder.StyleStandard):
         self.construction.wheels = 'Work Equip'
 
 
-Dutsun510Boso = builder.BuildIt(donor='Dutsun 510', style=Boso510)
+Dutsun510Boso = builder.BuildIt(donor='Dutsun 510', project=Boso510)
 
 print Dutsun510Boso()

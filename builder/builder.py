@@ -4,7 +4,10 @@
 
 class Engineer(object):
     """
-    Abstract class
+    Director (in original pattern)
+    The Director class is responsible for managing the correct sequence of
+    object creation. It receives a Concrete Builder as a parameter and
+    executes the necessary operations on it.
     """
     def __init__(self):
         self.project = None
@@ -19,8 +22,11 @@ class Engineer(object):
         return self.project.construction
 
 
-#Abstract Builder
 class StyleStandard(object):
+    """
+    Abstract builder (in original pattern).
+    Abstract interface for creating objects (product).
+    """
     def __init__(self, donor):
         self.construction = None
         self.donor = donor
@@ -29,8 +35,11 @@ class StyleStandard(object):
         self.construction = Workshop()
 
 
-#Product
 class Workshop(object):
+    """
+    Product (in original pattern)
+    The final object that will be created by the Director using Builder.
+    """
     def __init__(self):
         self.donor = None
         self.engene = None
@@ -40,16 +49,16 @@ class Workshop(object):
         return '%s %s on %s' % (self.engene, self.donor, self.wheels)
 
 
-#Client
 class BuildIt(object):
     """
-    Required parameters are `donor` as string car name
-    and `style` as StyleStandard exended class instance.
+    Client as callable class.
+    Client not required to be a callable class, but in my opinion, it is
+    pretty useful.
     """
-    def __init__(self, donor, style):
+    def __init__(self, donor, project):
         self.engeneer = Engineer()
         self.donor = donor
-        self.style = style
+        self.style = project
         self.construction = None
 
     def build(self):
