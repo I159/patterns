@@ -1,10 +1,15 @@
 #!/usr/bin/env python
 # -*- coding; utf-8 -*-
+"""
+Separate the construction of a complex object from its representation. Allowing
+to use the same construction process to create various representations.
+"""
 
 
 class Engineer(object):
     """
-    Abstract class
+    Builder
+    Abstract interface for creating objects (product)
     """
     def __init__(self):
         self.project = None
@@ -43,8 +48,9 @@ class Workshop(object):
 #Client
 class BuildIt(object):
     """
+    Interface.
     Required parameters are `donor` as string car name
-    and `style` as StyleStandard exended class instance.
+    and `style` as StyleStandard extended class instance.
     """
     def __init__(self, donor, style):
         self.engeneer = Engineer()

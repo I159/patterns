@@ -1,8 +1,11 @@
 # !/usr/bin/env python
 # -*- coding:utf8 -*-
+"""
+Decouple an abstraction from its implementation
+"""
 
 
-class SortAbs(object):
+class SortImpl(object):
     def __init__(self, sort_type):
         self._sort_impl = sort_type
 
@@ -11,6 +14,6 @@ class SortAbs(object):
         return data
 
 
-class SortImpl(object):
+class SortAbs(object):
     def sort(self, data):
         raise NotImplementedError

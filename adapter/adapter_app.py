@@ -13,7 +13,7 @@ class Dog(Client):
 
 class Bob(AbsAdapter, Dog):
     """
-    Mixed-in abstract adapter
+    Mixed-in abstract adapter and client
     """
     def make_noise(self):
         return self.noise()
