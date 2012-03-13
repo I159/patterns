@@ -2,6 +2,8 @@
 # -*- coding; utf-8 -*-
 
 """
+Ensure a class has only named instances, and provide global point of access 
+to them.
 Multiton pattern. If any class instance exists, returns existing instance.
 """
 

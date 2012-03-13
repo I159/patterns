@@ -7,6 +7,7 @@ from bridge import *
 class RegSort(SortAbs):
     """
     Appointed abstract method
+    Functionality provided via abstraction inheritance.
     """
     def sort(self, data):
         return data.sort()
@@ -14,7 +15,7 @@ class RegSort(SortAbs):
 
 class RevSort(SortAbs):
     """
-    Appointed abstract method
+    Functionality provided via abstraction inheritance.
     """
     def sort(self, data):
         data.sort()

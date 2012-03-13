@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 # -*- coding; utf-8 -*-
+"""
+Define an interface for creating an object, but let subclasses decide which
+class to instantiate. Factory Method lets a class defer instantiation to
+subclasses
+"""
 
 
 class Culture(object):
@@ -23,8 +28,7 @@ class Goverment(object):
 
     def set_culture(self):
         """
-        Must be overrided. Assign self.culture attribute,
-        which used in other methods. self.culture is
+        Abstract method. Required self.culture attribute as
         Culture class instance.
         """
         raise NotImplementedError
