@@ -1,10 +1,20 @@
 # !/usr/bin/env python
 # -*- coding:utf8 -*-
 
+"""
+Attach additional responsibilities to an object dynamically keeping the same
+interface. Decorators provide a flexible alternative to subclassing for
+extending functionality.
+Decorator - one of the most native Python idioms.
+"""
+
 from time import time
 
 
 def timer(f):
+    """
+    Simple decorator.
+    """
     def wrap(*args, **kwargs):
         t = time()
         result = f(*args, **kwargs)
@@ -13,8 +23,10 @@ def timer(f):
     return wrap
 
 
-# As class
 class Timer(object):
+    """
+    Decorator as class.
+    """
     def __init__(self, f):
         self.f = f
 
@@ -25,8 +37,10 @@ class Timer(object):
         return result
 
 
-# With arguments
 def replacer(p=None, a=None):
+    """
+    Decorator takes extra arguments.
+    """
     def _mid(f):
         class Wrap(object):
             def __init__(self, f, p, a):

@@ -25,6 +25,7 @@ def composition(intg):
 
 
 
+# Just using
 squirrels()
 multiplication(3)
 composition(3)

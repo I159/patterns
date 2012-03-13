@@ -4,12 +4,18 @@
 from bridge import *
 
 
-class RegSort(SortImpl):
+class RegSort(SortAbs):
+    """
+    Functionality provided via abstraction inheritance.
+    """
     def sort(self, data):
         return data.sort()
 
 
-class RevSort(SortImpl):
+class RevSort(SortAbs):
+    """
+    Functionality provided via abstraction inheritance.
+    """
     def sort(self, data):
         data.sort()
         data.reverse()
@@ -17,8 +23,8 @@ class RevSort(SortImpl):
 
 
 
-
-regular_sorting = SortAbs(RegSort())
-reverse_sorting = SortAbs(RevSort())
+# Implementation
+regular_sorting = SortImpl(RegSort())
+reverse_sorting = SortImpl(RevSort())
 print regular_sorting.sort([3,2,5,1,4])
 print reverse_sorting.sort([3,2,5,1,4])

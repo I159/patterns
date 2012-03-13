@@ -2,6 +2,12 @@
 # -*-coding:utf8 -*-
 
 class ItemsTree(object):
+    """
+    Compose objects into tree structures to represent part-whole hierarchies. 
+    Composite lets clients treat individual objects and compositions 
+    of objects uniformly.
+    The interface component is filled with the most used public methods.
+    """
 
     def __init__(self, name):
         self.items = []

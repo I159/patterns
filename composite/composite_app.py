@@ -14,6 +14,9 @@ third.get(0).add(ItemsTree('3.2'))
 
 
 def walk(item, level):
+    """
+    Hierarhy composing.
+    """
     print '%s%s' % (" "*level, item.name)
     for i in item:
         walk(i, level+1)
